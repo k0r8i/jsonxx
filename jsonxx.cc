@@ -307,6 +307,7 @@ bool Object::parse(std::istream& input, Object& object) {
             delete v;
             break;
         }
+        JSONXX_ASSERT(object.value_map_.find(key) == object.value_map_.end());
         object.value_map_[key] = v;
     } while (match(",", input));
 
